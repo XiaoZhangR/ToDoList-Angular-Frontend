@@ -1,0 +1,67 @@
+
+<h1>Enter the following details</h1>
+
+
+<table>
+  <!-- <tr>
+    <th><span>Name</span></th>
+    <td><input type="text" [(ngModel)]="dataset.id" name="name"></td>
+  </tr> -->
+  <tr>
+    <th><span>Item</span></th>
+    <td><input type="text" [(ngModel)]="dataset.item" name="item"></td>
+  </tr>
+  <tr>
+    <th><span>Status</span></th>
+    <td><input type="text" [(ngModel)]="dataset.status" name="status"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button (click)="sendEmail()">Submit</button></td>
+  </tr>
+  <tr>
+</table>
+
+<br>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="item">
+    <th mat-header-cell *matHeaderCellDef> Item </th>
+    <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="editItem(element.id)"> edit </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="accent" (click)="deleteItem(element.id)"> delete </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+ 
+</table>
+
+
+
+
+
+
