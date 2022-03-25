@@ -14,7 +14,7 @@ export interface ThingsToDo {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'EmailTemplate';
+  title = 'ToDoList';
   displayedColumns: string[] = ['id', 'item', 'status', 'edit', 'delete'];
   dataSource: any = [];
 
